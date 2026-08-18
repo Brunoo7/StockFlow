@@ -1,5 +1,5 @@
 from produtos import produtos_cadastrados
-regist_vendas = [{"nome": "Placa de vídeo", "Número de itens vendidos": 7, "Valor total da venda": 28000}, ]
+regist_vendas = [{"nome": "Placa de vídeo", "número de itens vendidos": 7, "valor total da venda": 28000}, ]
 
 def registrar_venda():
     print("===============")
@@ -18,7 +18,7 @@ def registrar_venda():
             if num_vendas <= produto["estoque"]:
                 produto["estoque"] -= num_vendas
                 vlr_total = num_vendas * preco
-                venda_produto = {"nome": nome, "Número de itens vendidos": num_vendas, "Valor total da venda": vlr_total}
+                venda_produto = {"nome": nome, "número de itens vendidos": num_vendas, "valor total da venda": vlr_total}
                 regist_vendas.append(venda_produto)
                 print(f"O valor total das vendas do produto {nome} é de R${vlr_total}")
 
@@ -27,3 +27,14 @@ def registrar_venda():
 
     if not encontrado:
         print("O produto não foi encontrado na lista, tente novamente")
+
+def listar_vendas():
+    print("======")
+    print("Vendas")
+    print("======")
+    print(f"{"Nome do produto".ljust(20)} | {"Número de itens vendidos".ljust(20)} | {"Valor total da venda"}")
+    for produto in regist_vendas:
+        nome = produto["nome"]
+        num_itens = produto["número de itens vendidos"]
+        vlr_total = produto["valor total da venda"]
+        print(f"{nome.ljust(20)} | {str(num_itens).ljust(20)} | {vlr_total} ")
