@@ -21,3 +21,16 @@ def lista_produtos():
         preco = produtos_cadastrados["preço"]
         estoque = produtos_cadastrados["estoque"]
         print(f"{nome.ljust(20)} | {categoria.ljust(20)} | {preco.ljust(20)} | {estoque}")
+
+def busca_produto():
+    print("Buscar produto")
+    produto = input("Digite o nome do produto que quer procurar: ")
+    for produto in produtos_cadastrados:
+        if produto["nome"] in produtos_cadastrados:
+            nome = produto["nome"]
+            categoria = produto["categoria"]
+            preco = produto["preço"]
+            estoque = produto["estoque"]
+            print(f"Nome: {nome}, Categoria: {categoria}, Preço: {preco}, Estoque: {estoque}")
+        else:
+            print("O produto não está na lista")
