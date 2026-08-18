@@ -38,3 +38,16 @@ def listar_vendas():
         num_itens = produto["número de itens vendidos"]
         vlr_total = produto["valor total da venda"]
         print(f"{nome.ljust(20)} | {str(num_itens).ljust(20)} | {vlr_total} ")
+
+def mostrar_faturamento():
+    print("=================")
+    print("Faturamento total")
+    print("=================")
+    faturamento_total = 0
+    for produto in regist_vendas:
+        nome = produto["nome"]
+        vlr_total = produto["valor total da venda"]
+        faturamento_total = faturamento_total + vlr_total
+        print(f"O produto {nome} teve o faturamento de R${vlr_total}")
+    print(f"O faturamento total é de R${faturamento_total}")
+
