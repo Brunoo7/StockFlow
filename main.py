@@ -83,26 +83,30 @@ def menu():
     opcao = 0
     while opcao != 9:
         opcoes()
-        opcao = int(input("Escolha uma opção: "))
-        match opcao:
-            case 1:
-                cadastro_produtos()
-            case 2:
-                lista_produtos()
-            case 3:
-                busca_produto()
-            case 4:
-                atualizar_estoque()
-            case 5:
-                registrar_venda()
-            case 6:
-                listar_vendas()
-            case 7:
-                mostrar_faturamento()
-            case 8:
-                mostrar_relatorio()
-            case 9:
-                sair()
-            case _:
-                print("Opção inválida, tente novamente")
+        try:
+            opcao = int(input("Escolha uma opção: "))
+            match opcao:
+                case 1:
+                    cadastro_produtos()
+                case 2:
+                    lista_produtos()
+                case 3:
+                    busca_produto()
+                case 4:
+                    atualizar_estoque()
+                case 5:
+                    registrar_venda()
+                case 6:
+                    listar_vendas()
+                case 7:
+                    mostrar_faturamento()
+                case 8:
+                    mostrar_relatorio()
+                case 9:
+                    sair()
+                case _:
+                    print("Opção inválida, tente novamente")
+        except ValueError:
+            print("Opção inválida, tente novamente")
+
 menu()
