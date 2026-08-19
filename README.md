@@ -1,10 +1,10 @@
-#  StockFlow — Sistema de Estoque e Vendas
+# StockFlow — Sistema de Estoque e Vendas
 
 Sistema de gerenciamento de **estoque e vendas** desenvolvido em Python para uma pequena loja.
 
 O projeto permite cadastrar produtos, controlar o estoque, registrar vendas e gerar relatórios com informações sobre os produtos e o faturamento.
 
-##  Funcionalidades
+## Funcionalidades
 
 * **Cadastrar produtos**
 
@@ -39,12 +39,12 @@ O projeto permite cadastrar produtos, controlar o estoque, registrar vendas e ge
 * **Listar vendas**
 
   * Exibe os produtos vendidos.
-  * Quantidade de itens vendidos.
-  * Valor total de cada venda.
+  * Exibe a quantidade de itens vendidos.
+  * Exibe o valor total de cada venda.
 
 * **Mostrar faturamento**
 
-  * Exibe o faturamento de cada produto.
+  * Exibe o faturamento de cada venda.
   * Calcula o faturamento total.
 
 * **Mostrar relatório**
@@ -55,7 +55,11 @@ O projeto permite cadastrar produtos, controlar o estoque, registrar vendas e ge
   * Produto mais vendido.
   * Faturamento total.
 
-##  Tecnologias utilizadas
+* **Sair**
+
+  * Encerra o programa.
+
+## Tecnologias utilizadas
 
 * **Python 3**
 * Listas
@@ -64,10 +68,11 @@ O projeto permite cadastrar produtos, controlar o estoque, registrar vendas e ge
 * Estruturas de repetição `for` e `while`
 * Estruturas condicionais `if`, `elif` e `else`
 * `match/case`
+* `try/except`
 * Módulos Python
 * Terminal/Console
 
-##  Estrutura do projeto
+## Estrutura do projeto
 
 ```text
 StockFlow/
@@ -85,9 +90,10 @@ Responsável pelo funcionamento principal do sistema:
 
 * Menu interativo
 * Controle das opções
-* Relatórios
-* Faturamento total
+* Geração de relatórios
+* Cálculo do faturamento total
 * Encerramento do programa
+* Tratamento de entradas inválidas no menu
 
 ### `produtos.py`
 
@@ -111,14 +117,11 @@ Responsável pelo gerenciamento das vendas:
 
 As vendas são armazenadas na lista `regist_vendas`.
 
-## ▶️ Como executar
+## Como executar
 
 1. Tenha o **Python 3** instalado.
-
 2. Clone ou baixe este repositório.
-
 3. Abra o terminal na pasta do projeto.
-
 4. Execute:
 
 ```bash
@@ -127,7 +130,7 @@ python main.py
 
 5. Utilize o menu para navegar pelo sistema.
 
-##  Menu
+## Menu
 
 ```text
 ======================================
@@ -145,7 +148,7 @@ StockFlow: Sistema de Estoque e Vendas
 9- Sair
 ```
 
-##  Armazenamento dos dados
+## Armazenamento dos dados
 
 Os dados são armazenados em **listas de dicionários** durante a execução do programa.
 
@@ -170,11 +173,37 @@ Os dados são armazenados em **listas de dicionários** durante a execução do 
 }
 ```
 
-##  Objetivo do projeto
+## Tratamento de dados
 
-O StockFlow foi desenvolvido com o objetivo de aplicar conceitos fundamentais de programação em Python, incluindo **funções, listas, dicionários, estruturas de repetição, estruturas condicionais e organização do código em diferentes módulos**.
+O sistema realiza algumas validações durante sua execução, como:
+
+* Verificação da existência do produto antes de realizar operações.
+* Verificação de estoque suficiente antes de registrar uma venda.
+* Impedimento de estoque negativo.
+* Tratamento de entradas inválidas no menu principal.
+
+## Observações
+
+Os dados são armazenados **apenas durante a execução do programa**. Ao encerrar o sistema, os produtos e vendas cadastrados durante aquela execução não são persistidos em um banco de dados ou arquivo externo.
+
+A pasta `__pycache__` e arquivos `.pyc` são ignorados pelo Git por meio do `.gitignore`.
+
+## Objetivo do projeto
+
+O StockFlow foi desenvolvido com o objetivo de aplicar conceitos fundamentais de programação em Python, incluindo:
+
+* Funções
+* Listas
+* Dicionários
+* Estruturas de repetição
+* Estruturas condicionais
+* `match/case`
+* `try/except`
+* Organização do código em diferentes módulos
+* Manipulação de dados
 
 ---
 
 **StockFlow — Sistema de Estoque e Vendas**
+
 Desenvolvido em Python.
