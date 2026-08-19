@@ -2,10 +2,6 @@ from produtos import cadastro_produtos, lista_produtos, busca_produto, atualizar
 from vendas import registrar_venda, listar_vendas, mostrar_faturamento, regist_vendas
 import os 
 
-def voltar_menu():
-    input("Selecione uma tecla para voltar ao menu principal: ")
-    menu()
-
 def sair():
     print("Fechando programa...")
     os.system("cls")
@@ -68,7 +64,6 @@ def mostrar_relatorio():
     produto_maior_estoque()
     produto_mais_vendido()
     fatur_total()
-    menu()
 
 def opcoes():
     print("1- Cadastro de produtos")
@@ -85,8 +80,9 @@ def menu():
     print("======================================")
     print("StockFlow: Sistema de Estoque e Vendas")
     print("======================================")
-    opcoes()
-    try:
+    opcao = 0
+    while opcao != 9:
+        opcoes()
         opcao = int(input("Escolha uma opção: "))
         match opcao:
             case 1:
@@ -107,6 +103,6 @@ def menu():
                 mostrar_relatorio()
             case 9:
                 sair()
-    except:
-        print("Opção inválida, tente novamente")
+            case _:
+                print("Opção inválida, tente novamente")
 menu()

@@ -1,5 +1,4 @@
 from produtos import produtos_cadastrados
-from main import voltar_menu
 regist_vendas = [{"nome": "Placa de vídeo", "número de itens vendidos": 7, "valor total da venda": 28000}, ]
 
 def registrar_venda():
@@ -28,7 +27,6 @@ def registrar_venda():
 
     if not encontrado:
         print("O produto não foi encontrado na lista, tente novamente")
-    voltar_menu()
 
 def listar_vendas():
     print("======")
@@ -40,7 +38,6 @@ def listar_vendas():
         num_itens = produto["número de itens vendidos"]
         vlr_total = produto["valor total da venda"]
         print(f"{nome.ljust(20)} | {str(num_itens).ljust(20)} | {vlr_total} ")
-    voltar_menu()
 
 def mostrar_faturamento():
     print("=================")
@@ -53,4 +50,3 @@ def mostrar_faturamento():
         faturamento_total = faturamento_total + vlr_total
         print(f"O produto {nome} teve o faturamento de R${vlr_total}")
     print(f"O faturamento total é de R${faturamento_total}")
-    voltar_menu()

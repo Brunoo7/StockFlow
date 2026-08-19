@@ -1,4 +1,3 @@
-from main import voltar_menu
 produtos_cadastrados = [{"nome": "Placa de vídeo", "categoria": "Informática", "preço": 4000, "estoque": 30}, ]
 
 def cadastro_produtos():
@@ -12,7 +11,6 @@ def cadastro_produtos():
     novo_produto = {"nome": nome, "categoria": categoria, "preço": preco, "estoque": estoque}
     produtos_cadastrados.append(novo_produto)
     print(f"O produto {nome} foi cadastrado com sucesso!")
-    voltar_menu()
 
 def lista_produtos():
     print("=================")
@@ -25,7 +23,6 @@ def lista_produtos():
         preco = produto["preço"]
         estoque = produto["estoque"]
         print(f"{nome.ljust(20)} | {categoria.ljust(20)} | {str(preco).ljust(20)} | {estoque}")
-    voltar_menu()
 
 def busca_produto():
     print("==============")
@@ -45,7 +42,6 @@ def busca_produto():
 
     if not encontrado:
         print("O produto não está cadastrado")
-    voltar_menu()
 
 def atualizar_estoque():
     print("=================")
@@ -83,4 +79,3 @@ def atualizar_estoque():
 
     if not encontrado:
             print("O produto não está cadastrado")  
-    voltar_menu()
