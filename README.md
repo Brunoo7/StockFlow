@@ -72,8 +72,10 @@ O projeto permite cadastrar produtos, controlar o estoque, registrar vendas e ge
 ```text
 StockFlow/
 │
+├── .gitignore
 ├── main.py
 ├── produtos.py
+├── README.md
 └── vendas.py
 ```
 
